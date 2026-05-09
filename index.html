@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +36,30 @@
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.7;
-      background: linear-gradient(135deg, #fff8e8 0%, #e8f6ef 45%, #eaf2ff 100%);
+      background:
+        linear-gradient(rgba(255,248,232,0.88), rgba(232,246,239,0.88)),
+        url('https://i.pinimg.com/736x/82/b8/a2/82b8a2ad2a3a229e86e7385270cacaf3.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
       color: #1a1a1a;
       font-size: 18px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 4px solid var(--green);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
     }
 
     .skip-link {
@@ -184,591 +206,89 @@
       color: var(--purple);
       display: block;
     }
-
-    .image-compare-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      margin-top: 20px;
-    }
-
-    .image-compare-grid figure {
-      background: white;
-      border-radius: 22px;
-      padding: 16px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.12);
-    }
-
-    .image-compare-grid img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 16px;
-      border: 4px solid var(--green);
-    }
-
-    .image-compare-grid figcaption {
-      margin-top: 12px;
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      background: white;
-      font-size: 0.95rem;
-    }
-
-    caption {
-      caption-side: top;
-      text-align: left;
-      font-weight: 900;
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-      color: var(--deep-green);
-    }
-
-    th, td {
-      border: 2px solid #d0d7de;
-      padding: 12px;
-      vertical-align: top;
-      text-align: left;
-    }
-
-    th {
-      background: var(--deep-green);
-      color: white;
-    }
-
-    tr:nth-child(even) td {
-      background: #f7fbff;
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-    }
-
-    .chart-card {
-      background: white;
-      padding: 24px;
-      border-radius: 22px;
-      margin: 28px 0;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
-    }
-
-    .chart-note {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      background: #fff8e8;
-      border-left: 6px solid var(--gold);
-      padding: 12px;
-      border-radius: 10px;
-    }
-
-    canvas {
-      max-width: 100%;
-    }
-
-    details {
-      background: #f8fafc;
-      border: 2px solid #d0d7de;
-      border-radius: 14px;
-      padding: 16px;
-      margin: 12px 0;
-    }
-
-    summary {
-      font-weight: 900;
-      cursor: pointer;
-      color: var(--deep-green);
-      font-size: 1.1rem;
-    }
-
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    @media (max-width: 700px) {
-      body {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 22px;
-      }
-
-      nav {
-        position: static;
-      }
-    }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header>
-    <h1>Montefiore Plaza Reimagined</h1>
-    <p>A community-centered, accessible, colorful, and financially realistic redesign proposal for Harlem.</p>
+<header>
+  <h1>Montefiore Plaza Reimagined</h1>
+  <p>A community-centered, accessible, colorful, and financially realistic redesign proposal for Harlem.</p>
+</header>
 
-    <div class="button-row">
-      <a class="btn" href="#proposal">Explore the Plan</a>
-      <a class="btn secondary" href="#budget">View the Budget</a>
-      <a class="btn secondary" href="#faq">Investor FAQ</a>
-    </div>
-  </header>
+<main>
 
-  <nav>
-    <ul>
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#before-after">Before & After</a></li>
-      <li><a href="#proposal">Plan</a></li>
-      <li><a href="#budget">Budget</a></li>
-      <li><a href="#graphs">Graphs</a></li>
-      <li><a href="#food">Food</a></li>
-      <li><a href="#wifi">Wi-Fi</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-  </nav>
+<section>
+  <h2>Before Montefiore Plaza vs. After Our Plan</h2>
 
-  <main id="main">
+  <div class="gallery">
+    <img src="images/before-montefiore.jpg">
+    <img src="images/after-plan-render.jpg">
+  </div>
+</section>
 
-    <section id="overview">
-      <h2>Project Overview</h2>
-      <p>
-        Montefiore Plaza in Harlem has the potential to become more than a walkway.
-        Our proposal transforms the plaza into a safe, active, green, and culturally meaningful public space.
-      </p>
+<!-- BEFORE GALLERY -->
+<section class="section">
+  <h2>Before Gallery</h2>
 
-      <div class="highlight">
-        Main idea: A successful plaza should not be measured only by how expensive it is.
-        It should be measured by how well it serves the people who use it every day.
-      </div>
+  <div class="gallery">
 
-      <div class="grid">
-        <article class="card">
-          <span class="big-number">$18.4M</span>
-          <p>Original city investment used as a comparison point.</p>
-        </article>
+    <img src="https://th.bing.com/th/id/OIP.btsiPkGtg5fRgggqfRL5_AHaE7?rs=1&pid=ImgDetMain">
+    <img src="https://th.bing.com/th/id/OIP.btsiPkGtg5fRgggqfRL5_AHaE7?rs=1&pid=ImgDetMain">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.2JrZp4FxnIVwDQ5NXylhxQHaFD?rs=1&pid=ImgDetMain">
+    <img src="IMG_0881.jpeg">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.QN4FHZq0ffUutAxJgV-PFAHaE7?rs=1&pid=ImgDetMain">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.rgcLLYXrZ969fKTY3-ikoQHaFj?rs=1&pid=ImgDetMain">
+    <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-6___20140715402.jpg">
 
-        <article class="card">
-          <span class="big-number">$13.6M–$14.2M</span>
-          <p>Projected redesign estimate using phased construction and partnerships.</p>
-        </article>
+    <img src="https://placehold.co/600x400?text=Before+1">
+    <img src="https://placehold.co/600x400?text=Before+2">
+    <img src="https://placehold.co/600x400?text=Before+3">
+    <img src="https://placehold.co/600x400?text=Before+4">
+    <img src="https://placehold.co/600x400?text=Before+5">
+    <img src="https://placehold.co/600x400?text=Before+6">
+    <img src="https://placehold.co/600x400?text=Before+7">
+    <img src="https://placehold.co/600x400?text=Before+8">
+    <img src="https://placehold.co/600x400?text=Before+9">
+    <img src="https://placehold.co/600x400?text=Before+10">
+    <img src="https://placehold.co/600x400?text=Before+11">
+    <img src="https://placehold.co/600x400?text=Before+12">
+    <img src="https://placehold.co/600x400?text=Before+13">
+    <img src="https://placehold.co/600x400?text=Before+14">
+    <img src="https://placehold.co/600x400?text=Before+15">
+    <img src="https://placehold.co/600x400?text=Before+16">
 
-        <article class="card">
-          <span class="big-number">3 Phases</span>
-          <p>Safety first, then environmental improvements, then cultural and economic activation.</p>
-        </article>
+  </div>
+</section>
 
-        <article class="card">
-          <span class="big-number">All Ages</span>
-          <p>Designed for children, teenagers, adults, seniors, and people with disabilities.</p>
-        </article>
-      </div>
-    </section>
+<!-- AFTER GALLERY -->
+<section class="section">
+  <h2>After Gallery</h2>
 
-    <section id="before-after">
-      <h2>Before Montefiore Plaza vs. After Our Plan</h2>
-      <p>
-        The images below show the difference between the current condition of Montefiore Plaza and our proposed redesign vision.
-      </p>
+  <div class="gallery">
 
-      <div class="image-compare-grid">
-        <figure>
-          <img src="images/before-montefiore.jpg" alt="Current view of Montefiore Plaza before the proposed redesign">
-          <figcaption>
-            Before: The current plaza has improved infrastructure, but it still functions mostly as a pass-through space.
-          </figcaption>
-        </figure>
+    <img src="https://placehold.co/600x400?text=After+1">
+    <img src="https://placehold.co/600x400?text=After+2">
+    <img src="https://placehold.co/600x400?text=After+3">
+    <img src="https://placehold.co/600x400?text=After+4">
+    <img src="https://placehold.co/600x400?text=After+5">
+    <img src="https://placehold.co/600x400?text=After+6">
+    <img src="https://placehold.co/600x400?text=After+7">
+    <img src="https://placehold.co/600x400?text=After+8">
+    <img src="https://placehold.co/600x400?text=After+9">
+    <img src="https://placehold.co/600x400?text=After+10">
+    <img src="https://placehold.co/600x400?text=After+11">
+    <img src="https://placehold.co/600x400?text=After+12">
+    <img src="https://placehold.co/600x400?text=After+13">
+    <img src="https://placehold.co/600x400?text=After+14">
+    <img src="https://placehold.co/600x400?text=After+15">
+    <img src="https://placehold.co/600x400?text=After+16">
 
-        <figure>
-          <img src="images/after-plan-render.jpg" alt="Concept image showing the proposed redesign of Montefiore Plaza with trees, seating, vendors, art, and community space">
-          <figcaption>
-            After: Our plan adds green infrastructure, seating, local vendors, public art, Wi-Fi, and all-age accessibility.
-          </figcaption>
-        </figure>
-      </div>
-    </section>
+  </div>
+</section>
 
-    <section id="proposal">
-      <h2>Our Redesign Proposal</h2>
+</main>
 
-      <div class="grid">
-        <article class="card">
-          <h3>Green Infrastructure</h3>
-          <p>Add native trees, rain gardens, shaded seating, and permeable pavement.</p>
-        </article>
-
-        <article class="card">
-          <h3>Flexible Seating</h3>
-          <p>Use movable chairs, modular benches, and community tables.</p>
-        </article>
-
-        <article class="card">
-          <h3>Harlem Culture</h3>
-          <p>Include murals, music, poetry, history displays, and public art.</p>
-        </article>
-
-        <article class="card">
-          <h3>Small Business Support</h3>
-          <p>Create vendor kiosks, weekend markets, and food spaces for local businesses.</p>
-        </article>
-
-        <article class="card">
-          <h3>Safety by Design</h3>
-          <p>Use better lighting, clear sightlines, active programming, and more foot traffic.</p>
-        </article>
-
-        <article class="card">
-          <h3>Technology Access</h3>
-          <p>Provide free Wi-Fi, charging stations, QR menus, and accessible audio information.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="budget">
-      <h2>Financial Management: Budget and Cost Strategy</h2>
-      <p>
-        This budget shows how money could be allocated across the redesigned plaza.
-      </p>
-
-      <div class="table-wrap">
-        <table>
-          <caption>Proposed Budget Breakdown</caption>
-          <thead>
-            <tr>
-              <th>Redesign Component</th>
-              <th>Purpose</th>
-              <th>Estimated Cost</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr><td>Green Infrastructure & Landscaping</td><td>Tree planting, rain gardens, shaded seating</td><td>$3.2 million</td></tr>
-            <tr><td>Flexible Seating Systems</td><td>Movable chairs, modular benches, community tables</td><td>$850,000</td></tr>
-            <tr><td>Smart Lighting & Technology</td><td>Energy-efficient lighting, Wi-Fi, charging stations</td><td>$1.5 million</td></tr>
-            <tr><td>Accessibility Improvements</td><td>ADA pathways, tactile paving, multilingual signage</td><td>$1.1 million</td></tr>
-            <tr><td>Cultural Art Installations</td><td>Murals, public art, Harlem history displays</td><td>$700,000</td></tr>
-            <tr><td>Vendor Kiosks & Market Areas</td><td>Small business spaces and food vendors</td><td>$900,000</td></tr>
-            <tr><td>Performance & Community Spaces</td><td>Stage construction and event areas</td><td>$1.4 million</td></tr>
-            <tr><td>Drainage & Permeable Pavement</td><td>Stormwater and flood reduction systems</td><td>$2 million</td></tr>
-            <tr><td>Maintenance & Operations Setup</td><td>Sanitation, landscaping, and maintenance support</td><td>$750,000</td></tr>
-            <tr><td>Community Outreach & Programming</td><td>Surveys, workshops, and public events</td><td>$400,000</td></tr>
-            <tr><td>Contingency Funding</td><td>Unexpected construction costs</td><td>$1.2 million</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="highlight">
-        Estimated total cost: approximately $13.6–$14.2 million.
-        This is lower than the original $18.4 million investment.
-      </p>
-    </section>
-
-    <section id="graphs">
-      <h2>Realistic Financial and Community Impact Graphs</h2>
-      <p>
-        These graphs use confirmed public data where available and clearly labeled projections where exact future revenue data does not exist yet.
-      </p>
-
-      <div class="chart-card">
-        <h3>Cost Comparison</h3>
-        <canvas id="costComparisonChart"></canvas>
-        <p class="chart-note">
-          The original Montefiore Plaza project cost $18.4 million. Our proposal estimates $13.6–$14.2 million.
-        </p>
-      </div>
-
-      <div class="chart-card">
-        <h3>Budget Allocation</h3>
-        <canvas id="budgetAllocationChart"></canvas>
-      </div>
-
-      <div class="chart-card">
-        <h3>Evidence From Similar NYC Plaza Projects</h3>
-        <canvas id="nycTrendChart"></canvas>
-        <p class="chart-note">
-          Times Square pedestrian plaza data showed an 11% increase in pedestrian volume and a 35% decrease in pedestrian injuries.
-        </p>
-      </div>
-
-      <div class="chart-card">
-        <h3>10-Year Revenue Recovery Projection</h3>
-        <canvas id="revenueProjectionChart"></canvas>
-        <p class="chart-note">
-          This is a projection model, not a guaranteed result.
-        </p>
-      </div>
-
-      <div class="chart-card">
-        <h3>10-Year Cost vs. Benefit Projection</h3>
-        <canvas id="costBenefitChart"></canvas>
-        <p class="chart-note">
-          This graph estimates whether long-term benefits could outweigh the cost over time.
-        </p>
-      </div>
-    </section>
-
-    <section id="food">
-      <h2>Food Ordering and Local Vendor System</h2>
-      <p>
-        Food access can make the plaza more active and useful. Our plan includes local Harlem food vendors, pop-up markets,
-        QR code menus, and walk-up ordering.
-      </p>
-
-      <div class="grid">
-        <article class="card">
-          <h3>QR Code Ordering</h3>
-          <p>Visitors can scan a QR code to order from local vendors.</p>
-        </article>
-
-        <article class="card">
-          <h3>Walk-Up Ordering</h3>
-          <p>Seniors, children, and people without phones can order directly at vendor windows.</p>
-        </article>
-
-        <article class="card">
-          <h3>Accessible Menus</h3>
-          <p>Large-print menus, allergy labels, and audio menu options.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="wifi">
-      <h2>Free Wi-Fi and Digital Access</h2>
-      <p>
-        Public Wi-Fi would help students, workers, families, tourists, and community members.
-      </p>
-
-      <div class="highlight">
-        Wi-Fi name: <strong>MontefiorePlaza-FreeWiFi</strong>
-      </div>
-
-      <ol>
-        <li>Connect to MontefiorePlaza-FreeWiFi.</li>
-        <li>Accept the public use agreement.</li>
-        <li>Use the plaza map, food ordering, event calendar, and emergency information page.</li>
-      </ol>
-    </section>
-
-    <section id="faq">
-      <h2>Frequently Asked Questions for Residents, Visitors, and Investors</h2>
-
-      <details>
-        <summary>Why is this proposal better than the current redesign?</summary>
-        <p>It adds culture, programming, food access, Wi-Fi, seating, shade, safety, local business opportunities, and long-term maintenance planning.</p>
-      </details>
-
-      <details>
-        <summary>How could this cost less than $18.4 million?</summary>
-        <p>The proposal uses phased construction, modular furniture, sustainable materials, partnerships, and community-supported operations.</p>
-      </details>
-
-      <details>
-        <summary>How will investors benefit?</summary>
-        <p>Investors may benefit from increased foot traffic, vendor revenue, sponsorship visibility, and stronger neighborhood activity.</p>
-      </details>
-
-      <details>
-        <summary>Where would revenue come from?</summary>
-        <p>Vendor permits, event sponsorships, seasonal markets, small business partnerships, grants, and nonprofit funding.</p>
-      </details>
-
-      <details>
-        <summary>How will food ordering work?</summary>
-        <p>People can order through QR codes, walk-up counters, large-print menus, or accessible audio menu systems.</p>
-      </details>
-
-      <details>
-        <summary>Will the plaza have free Wi-Fi?</summary>
-        <p>Yes, the proposal includes free public Wi-Fi with accessibility support.</p>
-      </details>
-
-      <details>
-        <summary>How will the plaza be safe at night?</summary>
-        <p>Smart lighting, clear sightlines, active programming, vendor presence, and increased foot traffic.</p>
-      </details>
-
-      <details>
-        <summary>How will seniors use the plaza comfortably?</summary>
-        <p>Shaded seating, benches with backs, smooth walkways, large-print signs, and quiet seating areas.</p>
-      </details>
-
-      <details>
-        <summary>How will children use the plaza safely?</summary>
-        <p>Soft play areas, family seating, stroller-friendly paths, colorful ground art, and safe walking zones.</p>
-      </details>
-
-      <details>
-        <summary>How will blind or low-vision users access the space?</summary>
-        <p>Tactile paving, audio descriptions, high-contrast signs, large-print maps, and screen reader-friendly web pages.</p>
-      </details>
-
-      <details>
-        <summary>What are the biggest risks?</summary>
-        <p>Funding gaps, construction disruption, maintenance challenges, and overcrowding during events.</p>
-      </details>
-    </section>
-  </main>
-
-  <footer>
-    <p><strong>Montefiore Plaza Redesign Proposal</strong></p>
-    <p>Created by Shamor Johnson and Partner’s Name.</p>
-    <p>This student proposal is for educational and planning discussion purposes.</p>
-  </footer>
-
-  <script>
-    Chart.defaults.color = "#17202a";
-    Chart.defaults.font.size = 14;
-
-    new Chart(document.getElementById("costComparisonChart"), {
-      type: "bar",
-      data: {
-        labels: ["Original City Project", "Proposed Low Estimate", "Proposed High Estimate"],
-        datasets: [{
-          label: "Cost in Millions of Dollars",
-          data: [18.4, 13.6, 14.2],
-          backgroundColor: ["#e76f51", "#1f7a4d", "#1d4e89"]
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: { display: true, text: "Millions of Dollars" }
-          }
-        }
-      }
-    });
-
-    new Chart(document.getElementById("budgetAllocationChart"), {
-      type: "doughnut",
-      data: {
-        labels: [
-          "Green Infrastructure",
-          "Flexible Seating",
-          "Lighting & Technology",
-          "Accessibility",
-          "Cultural Art",
-          "Vendor Areas",
-          "Performance Spaces",
-          "Drainage",
-          "Maintenance",
-          "Community Outreach",
-          "Contingency"
-        ],
-        datasets: [{
-          label: "Estimated Cost",
-          data: [3.2, 0.85, 1.5, 1.1, 0.7, 0.9, 1.4, 2.0, 0.75, 0.4, 1.2],
-          backgroundColor: [
-            "#1f7a4d",
-            "#f4b942",
-            "#1d4e89",
-            "#5d3a9b",
-            "#e76f51",
-            "#2a9d8f",
-            "#264653",
-            "#8ecae6",
-            "#ffb703",
-            "#6a994e",
-            "#bc4749"
-          ]
-        }]
-      }
-    });
-
-    new Chart(document.getElementById("nycTrendChart"), {
-      type: "bar",
-      data: {
-        labels: ["Pedestrian Volume", "Pedestrian Injuries"],
-        datasets: [{
-          label: "Percent Change After Times Square Plaza Redesign",
-          data: [11, -35],
-          backgroundColor: ["#1f7a4d", "#e76f51"]
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            title: { display: true, text: "Percent Change" }
-          }
-        }
-      }
-    });
-
-    const annualRecovery = 0.493;
-    const years = ["Year 1","Year 2","Year 3","Year 4","Year 5","Year 6","Year 7","Year 8","Year 9","Year 10"];
-    const cumulativeRevenue = years.map((_, index) => Number(((index + 1) * annualRecovery).toFixed(2)));
-
-    new Chart(document.getElementById("revenueProjectionChart"), {
-      type: "line",
-      data: {
-        labels: years,
-        datasets: [{
-          label: "Projected Cumulative Revenue Recovery in Millions",
-          data: cumulativeRevenue,
-          borderColor: "#1f7a4d",
-          backgroundColor: "rgba(31, 122, 77, 0.18)",
-          fill: true,
-          tension: 0.25
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: { display: true, text: "Millions of Dollars" }
-          }
-        }
-      }
-    });
-
-    const projectCost = 14.2;
-    const annualTotalBenefit = 1.7;
-    const cumulativeBenefits = years.map((_, index) => Number(((index + 1) * annualTotalBenefit).toFixed(2)));
-    const costLine = years.map(() => projectCost);
-
-    new Chart(document.getElementById("costBenefitChart"), {
-      type: "line",
-      data: {
-        labels: years,
-        datasets: [
-          {
-            label: "One-Time Project Cost: $14.2M",
-            data: costLine,
-            borderColor: "#e76f51",
-            backgroundColor: "rgba(231, 111, 81, 0.15)",
-            fill: false
-          },
-          {
-            label: "Projected Cumulative Benefits",
-            data: cumulativeBenefits,
-            borderColor: "#1d4e89",
-            backgroundColor: "rgba(29, 78, 137, 0.18)",
-            fill: true,
-            tension: 0.25
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
-            title: { display: true, text: "Millions of Dollars" }
-          }
-        }
-      }
-    });
-  </script>
 </body>
 </html>
+```
